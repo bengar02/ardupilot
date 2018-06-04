@@ -499,7 +499,7 @@ void Plane::set_mode(enum FlightMode mode, mode_reason_t reason)
         break;
 
     case QSTABILIZE:
-    case UWSTABILIZE
+    case UWSTABILIZE:
     case QHOVER:
     case QLOITER:
     case QLAND:
@@ -553,7 +553,7 @@ bool Plane::mavlink_set_mode(uint8_t mode)
     case QHOVER:
     case QLOITER:
     case QLAND:
-    case UWSTABILIZE
+    case UWSTABILIZE:
     case QRTL:
         set_mode((enum FlightMode)mode, MODE_REASON_GCS_COMMAND);
         return true;

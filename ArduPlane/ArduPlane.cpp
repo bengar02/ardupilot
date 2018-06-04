@@ -612,11 +612,6 @@ void Plane::update_flight_mode(void)
         // no break
 
     case UWSTABILIZE:
-        nav_roll_cd        = 0;
-        nav_pitch_cd       = 0;
-        // throttle is passthrough
-        break;
-
     case RTL:
     case LOITER:
         calc_nav_roll();
