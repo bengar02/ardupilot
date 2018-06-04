@@ -26,6 +26,7 @@ void Plane::failsafe_short_on_event(enum failsafe_state fstype, mode_reason_t re
         break;
 
     case QSTABILIZE:
+    case UWSTABILIZE:
     case QLOITER:
     case QHOVER:
         failsafe.saved_mode = control_mode;
@@ -75,6 +76,7 @@ void Plane::failsafe_long_on_event(enum failsafe_state fstype, mode_reason_t rea
     case FLY_BY_WIRE_B:
     case CRUISE:
     case TRAINING:
+    case UWSTABILIZE:
     case CIRCLE:
         if(g.long_fs_action == 3) {
 #if PARACHUTE == ENABLED

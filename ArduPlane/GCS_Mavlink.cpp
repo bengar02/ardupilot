@@ -40,6 +40,7 @@ void Plane::send_heartbeat(mavlink_channel_t chan)
     case QSTABILIZE:
     case QHOVER:
     case QLOITER:
+    case UWSTABILIZE:
     case QLAND:
     case CRUISE:
         base_mode = MAV_MODE_FLAG_STABILIZE_ENABLED;

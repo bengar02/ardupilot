@@ -143,6 +143,7 @@ void Plane::stabilize_stick_mixing_direct()
         control_mode == QLOITER ||
         control_mode == QLAND ||
         control_mode == QRTL ||
+        control_mode == UWSTABILIZE ||
         control_mode == TRAINING) {
         return;
     }
@@ -173,6 +174,7 @@ void Plane::stabilize_stick_mixing_fbw()
         control_mode == QLAND ||
         control_mode == QRTL ||
         control_mode == TRAINING ||
+        control_mode == UWSTABILIZE ||
         (control_mode == AUTO && g.auto_fbw_steer == 42)) {
         return;
     }
@@ -372,6 +374,7 @@ void Plane::stabilize()
                control_mode == QHOVER ||
                control_mode == QLOITER ||
                control_mode == QLAND ||
+               control_mode == UWSTABILIZE ||
                control_mode == QRTL) {
         quadplane.control_run();
     } else {

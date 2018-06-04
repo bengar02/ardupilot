@@ -391,3 +391,6 @@
 # define HAVE_PX4_MIXER 0
 #endif
 
+#ifndef k_phi
+# define k_phi <InitialValue-.85>
+#endif

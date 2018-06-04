@@ -611,6 +611,12 @@ void Plane::update_flight_mode(void)
         }
         // no break
 
+    case UWSTABILIZE:
+        nav_roll_cd        = 0;
+        nav_pitch_cd       = 0;
+        // throttle is passthrough
+        break;
+
     case RTL:
     case LOITER:
         calc_nav_roll();
@@ -736,6 +742,13 @@ void Plane::update_flight_mode(void)
         nav_pitch_cd       = 0;
         // throttle is passthrough
         break;
+
+    case UWSTABILIZE:
+        nav_roll_cd        = 0;
+        nav_pitch_cd       = 0;
+        // throttle is passthrough
+        break;
+
         
     case CIRCLE:
         // we have no GPS installed and have lost radio contact
@@ -863,6 +876,7 @@ void Plane::update_navigation()
     case QLOITER:
     case QLAND:
     case QRTL:
+    case UWSTABILIZE:
         // nothing to do
         break;
     }

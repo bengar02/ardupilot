@@ -238,6 +238,7 @@ void Plane::update_sensor_status_flags(void)
         break;
 
     case STABILIZE:
+    case UWSTABILIZE:
     case FLY_BY_WIRE_A:
     case AUTOTUNE:
     case QSTABILIZE:

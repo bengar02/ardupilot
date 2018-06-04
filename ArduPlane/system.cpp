@@ -499,6 +499,7 @@ void Plane::set_mode(enum FlightMode mode, mode_reason_t reason)
         break;
 
     case QSTABILIZE:
+    case UWSTABILIZE
     case QHOVER:
     case QLOITER:
     case QLAND:
@@ -552,6 +553,7 @@ bool Plane::mavlink_set_mode(uint8_t mode)
     case QHOVER:
     case QLOITER:
     case QLAND:
+    case UWSTABILIZE
     case QRTL:
         set_mode((enum FlightMode)mode, MODE_REASON_GCS_COMMAND);
         return true;
@@ -734,6 +736,9 @@ void Plane::print_flight_mode(AP_HAL::BetterStream *port, uint8_t mode)
     case QSTABILIZE:
         port->printf("QStabilize");
         break;
+    case UWSTABILIZE:
+        port->printf("UWStabilize");
+        break;
     case QHOVER:
         port->printf("QHover");
         break;
@@ -806,6 +811,9 @@ void Plane::notify_flight_mode(enum FlightMode mode)
         break;
     case QSTABILIZE:
         notify.set_flight_mode_str("QSTB");
+        break;
+    case UWSTABILIZE:
+        notify.set_flight_mode_str("UWST");
         break;
     case QHOVER:
         notify.set_flight_mode_str("QHOV");
